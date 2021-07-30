@@ -1,67 +1,39 @@
-import { createGlobalStyle, css } from 'styled-components'
+import { createGlobalStyle } from 'styled-components'
 
 const GlobalStyles = createGlobalStyle`
-
-  @font-face {
-    font-family: 'Montserrat';
-    font-style: normal;
-    font-weight: 200;
-    font-display: swap;
-    src: local(''),
-        url('/fonts/montserrat-v15-latin-200.woff2') format('woff2'),
+  :root {
+    --highlight: #e20e8d;
+    --background: #030518;
+    --white: #eeeeee;
+    --container: 100rem;
+    --small: 1.5rem;
+    --medium: 3rem;
+    --large: 5rem;
   }
-
-  @font-face {
-    font-family: 'Montserrat';
-    font-style: normal;
-    font-weight: 400;
-    font-display: swap;
-    src: local(''),
-        url('/fonts/montserrat-v15-latin-regular.woff2') format('woff2'),
-  }
-
-  @font-face {
-    font-family: 'Montserrat';
-    font-style: normal;
-    font-weight: 600;
-    font-display: swap;
-    src: local(''),
-        url('/fonts/montserrat-v15-latin-600.woff2') format('woff2'),
-  }
-
-  @font-face {
-    font-family: 'Montserrat';
-    font-style: normal;
-    font-weight: 800;
-    font-display: swap;
-    src: local(''),
-        url('/fonts/montserrat-v15-latin-800.woff2') format('woff2'),
-  }
-
   * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
   }
-${({ theme }) => css`
   html {
     font-size: 62.5%;
   }
-
-  html,
-  body,
-  #__next {
+  html, body, #__next {
     height: 100%;
+    background: var(--background);
+    color: var(--white);
   }
-
   body {
-    font-family: ${theme.font.family};
-    font-size: ${theme.font.sizes.medium};
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif
   }
-`}
-
+  p,
+  a {
+    font-size: 2rem;
+    line-height: var(--medium);
+  }
+  a {
+    color: var(--highlight);
+  }
 `
 
 export default GlobalStyles
