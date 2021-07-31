@@ -8,5 +8,6 @@ describe('<LinkWrapper />', () => {
     const children = screen.getByText(/anything/i)
 
     expect(children).toBeInTheDocument()
+    expect(children).toHaveAttribute('href', '/my-link')
   })
 })
